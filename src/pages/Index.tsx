@@ -55,14 +55,41 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden">
+      {/* Космические звёзды */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-20 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+        <div
+          className="absolute top-40 right-32 w-0.5 h-0.5 bg-gray-300 rounded-full animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-80 left-1/3 w-1 h-1 bg-white rounded-full animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-40 right-20 w-0.5 h-0.5 bg-gray-300 rounded-full animate-pulse"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-10 w-1 h-1 bg-white rounded-full animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+      </div>
       {/* Navigation */}
       <nav className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <Icon name="Gamepad2" size={32} className="text-blue-400" />
-              <span className="text-2xl font-bold text-white">GameKeys</span>
+              <div className="relative">
+                <Icon
+                  name="Rocket"
+                  size={32}
+                  className="text-gray-400 animate-bounce"
+                />
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-gradient-to-t from-orange-400 to-transparent animate-pulse"></div>
+              </div>
+              <span className="text-2xl font-bold text-white">LunixShop</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a
@@ -90,7 +117,7 @@ const Index = () => {
                 Поддержка
               </a>
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button className="bg-gray-600 hover:bg-gray-700">
               <Icon name="ShoppingCart" size={16} className="mr-2" />
               Корзина
             </Button>
@@ -106,12 +133,12 @@ const Index = () => {
             alt="Gaming background"
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-blue-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-gray-900/80"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Лучшие игры
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-white">
               по лучшим ценам
             </span>
           </h1>
@@ -133,7 +160,7 @@ const Index = () => {
             </div>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
+              className="bg-gradient-to-r from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900"
             >
               Найти
             </Button>
@@ -188,7 +215,7 @@ const Index = () => {
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                <Button className="w-full bg-gray-600 hover:bg-gray-700">
                   <Icon name="Download" size={16} className="mr-2" />
                   Купить ключ
                 </Button>
@@ -214,7 +241,7 @@ const Index = () => {
                   <Icon
                     name={category.icon}
                     size={48}
-                    className="text-blue-400 mx-auto mb-4"
+                    className="text-gray-400 mx-auto mb-4"
                   />
                   <CardTitle className="text-white text-xl mb-2">
                     {category.name}
@@ -242,7 +269,7 @@ const Index = () => {
               </p>
               <div className="grid grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-blue-400">5000+</div>
+                  <div className="text-3xl font-bold text-gray-400">5000+</div>
                   <div className="text-slate-400">Игр в каталоге</div>
                 </div>
                 <div>
@@ -257,7 +284,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-xl p-8">
+            <div className="bg-gradient-to-r from-gray-600/20 to-gray-800/20 rounded-xl p-8 border border-gray-700">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Наши преимущества
               </h3>
@@ -314,7 +341,7 @@ const Index = () => {
                 <Icon
                   name="MessageCircle"
                   size={48}
-                  className="text-blue-400 mx-auto mb-4"
+                  className="text-gray-400 mx-auto mb-4"
                 />
                 <CardTitle className="text-white mb-2">Telegram</CardTitle>
                 <CardDescription className="text-slate-400 mb-4">
@@ -322,7 +349,7 @@ const Index = () => {
                 </CardDescription>
                 <Button
                   variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+                  className="border-gray-400 text-gray-400 hover:bg-gray-400 hover:text-white"
                 >
                   Написать
                 </Button>
@@ -376,8 +403,15 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Icon name="Gamepad2" size={32} className="text-blue-400" />
-                <span className="text-2xl font-bold text-white">GameKeys</span>
+                <div className="relative">
+                  <Icon
+                    name="Rocket"
+                    size={32}
+                    className="text-gray-400 animate-bounce"
+                  />
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-gradient-to-t from-orange-400 to-transparent animate-pulse"></div>
+                </div>
+                <span className="text-2xl font-bold text-white">LunixShop</span>
               </div>
               <p className="text-slate-400">
                 Ваш надёжный партнёр в мире цифровых игр
@@ -404,14 +438,14 @@ const Index = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-slate-400">
-                <li>support@gamekeys.ru</li>
-                <li>Telegram: @gamekeys_support</li>
+                <li>support@lunixshop.ru</li>
+                <li>Telegram: @lunixshop_support</li>
                 <li>Работаем 24/7</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 GameKeys. Все права защищены.</p>
+            <p>&copy; 2024 LunixShop. Все права защищены.</p>
           </div>
         </div>
       </footer>
